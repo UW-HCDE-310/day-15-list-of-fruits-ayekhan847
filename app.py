@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-
+import keys
 app = Flask(__name__)
 @app.route("/")
 def index():
@@ -15,4 +15,4 @@ def index():
         if fruit["name"].startswith("o") and fruit["quantity"] <= 3:
             filtered_fruits.append(fruit)
     print(filtered_fruits)
-    return render_template("index.html", fruits=filtered_fruits)
+    return render_template("index.html", fruits=filtered_fruits, key_1=keys.MY_API_KEY)
